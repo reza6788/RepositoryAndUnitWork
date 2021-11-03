@@ -2,7 +2,7 @@
 
 namespace RepositoryAndUnitWork.Core.IRepositories
 {
-    public interface IUserRepository :IRepository<User>
+    public interface IUserRepository :IGenericRepository<User>
     {
        
     }

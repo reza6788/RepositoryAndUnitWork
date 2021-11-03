@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace RepositoryAndUnitWork.Core.IRepositories
 {
-    public interface IRepository<T> where T : class
+    public interface IGenericRepository<T> where T : class
     {
         Task<List<T>> All();
         Task<T> GetById(Guid id);
