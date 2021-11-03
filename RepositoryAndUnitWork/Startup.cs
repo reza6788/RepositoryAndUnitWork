@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using RepositoryAndUnitWork.Data;
 
 namespace RepositoryAndUnitWork
 {
@@ -26,6 +28,9 @@ namespace RepositoryAndUnitWork
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApiDbContext>(options=>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            );
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
