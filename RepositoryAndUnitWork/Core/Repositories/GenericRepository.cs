@@ -18,9 +18,9 @@ namespace RepositoryAndUnitWork.Core.Repositories
             ApiDbContext apiDbContext,
             ILogger logger)
         {
-            apiDbContext = _apiDbContext;
-            logger = _logger;
-            dbSet = _apiDbContext.Set<T>();
+            _apiDbContext = apiDbContext;
+            _logger = logger;
+            dbSet = apiDbContext.Set<T>();
         }
 
         public virtual async Task<List<T>> All()
